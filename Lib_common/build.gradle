@@ -1,0 +1,36 @@
+// 公共基础库模块：CLog / Const / VehicleData 等跨模块通用代码。
+// 与 Lib_dashboard 同级（open_manager/Lib_common），被 App 与各业务模块依赖。
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.automanager.libcommon'
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 17
+        versionCode 1
+        versionName "1.0"
+        // VehicleData AIDL/Parcelable keep 规则随库分发给宿主 app，防止 R8 混淆跨进程类
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}

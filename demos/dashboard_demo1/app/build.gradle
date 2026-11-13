@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.automanager.demo.dashboard'
+    // 运行环境为车机 Android 4.2.2（API 17）；compileSdk 与仓库其他 App 保持一致
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.automanager.demo.dashboard"
+        minSdkVersion 17
+        targetSdkVersion 17
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    // 仪表基类 / IDashboardService AIDL / DashboardInfo / Util
+    implementation project(':Lib_common')
+    implementation project(':Lib_dashboard')
+}

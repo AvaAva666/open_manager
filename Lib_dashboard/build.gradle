@@ -1,0 +1,38 @@
+// 公共 Lib_dashboard 库模块：仪表进程 SDK 接口（DashboardInfo / Util / IDashboardService AIDL）。
+// 与 Lib_common 同级（open_manager/Lib_dashboard），被 App 通过 settings.gradle include 复用。
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.automanager.libdashboard'
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 17
+        versionCode 1
+        versionName "1.0"
+        // DashboardInfo AIDL/Parcelable keep 规则随库分发给宿主 app
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    // Util 静态导入 com.automanager.Const 车型常量（位于 Lib_common）
+    implementation project(':Lib_common')
+}

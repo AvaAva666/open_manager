@@ -1,0 +1,5 @@
+include ':app', ':Lib_common', ':Lib_dashboard'
+
+// 复用 open_manager 下的公共库（Instrument SDK 基类 / AIDL / 车型常量），demo 内不再维护副本
+project(':Lib_common').projectDir = new File('../../Lib_common')
+project(':Lib_dashboard').projectDir = new File('../../Lib_dashboard')
