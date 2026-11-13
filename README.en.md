@@ -7,7 +7,10 @@
 - **Environment**: Android 4.2.2 (API 17) head units only.
 - **Supported vehicles**: Honda 10th-gen Civic, Avancier, UR-V, CR-V, Breeze, and Acura CDX.
 - **Host dependency**: the head unit must have the `com.automanager` app installed. It provides vehicle data acquisition and the ability to render custom Views on the factory instrument cluster; without it, neither the libraries nor the demo in this repository can run.
-- **How to use**: install the built demo APK on the head unit, open `com.automanager`, and tap "Custom Dashboards"; the local dashboards page will automatically discover the newly implemented dashboard service.
+- **How to use**:
+    1. On the head unit browser, open https://7654321.org and install the "Manager" app.
+    2. Build the APK in `demos/dashboard_demo1` (or just run `sh_build.sh`) and install it on the head unit. Open the "Manager" app, tap "Custom Dashboards"; the local dashboards page will automatically discover the newly implemented dashboard service.
+    3. ![Preview](./preview.jpg)
 
 ## Overview
 
@@ -79,7 +82,7 @@ The demo package is `com.automanager.demo.dashboard`; the core implementation is
 Once installed, the host (the Assistant local-dashboard page) discovers it by scanning for
 `ACTION_DASHBOARD_SERVICE`; selecting it renders HelloWorld on the cluster and, below it, the live
 engine speed obtained by subscribing to `VehicleData` (`FIELD_ENGINE_RPM`) through
-`VehicleDataManager`; the preview card is titled "HelloWorld 演示".
+`VehicleDataManager`; the preview card is titled "HelloWorld Demo".
 
 ## Integrate into Your App
 

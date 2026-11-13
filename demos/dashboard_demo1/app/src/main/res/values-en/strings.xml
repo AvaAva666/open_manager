@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dashboard Demo1</string>
+    <string name="hello_world">HelloWorld</string>
+    <string name="dashboard_title">HelloWorld Demo</string>
+    <string name="rpm_format">Engine speed: %d rpm</string>
+    <string name="rpm_unavailable">Engine speed: -- rpm</string>
+</resources>
